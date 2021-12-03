@@ -1,0 +1,79 @@
+@import './var.less';
+
+.van-index-bar-x {
+  &__sidebar {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    z-index: @index-bar-sidebar-z-index;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
+  }
+
+  &__index {
+    position: relative;
+    padding: 0 @padding-xs 0 4px;
+    font-weight: @font-weight-bold;
+    font-size: @index-bar-index-font-size;
+    line-height: @index-bar-index-line-height;
+    color: #555;
+    
+    & > span {
+      border-radius: 50%;
+      text-align: center;
+      display: inline-block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    &--active {
+      color: @index-bar-index-active-color;
+    }
+  }
+
+  &__hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &--pop{
+      position: absolute;
+      right: 150%;
+      top: 50%;
+      margin-top:-25px;
+      background-image: url(assets/contact/ContactIndexShape_60x50.png);
+      background-repeat: no-repeat;
+      background-size: 60px 50px;
+      width: 60px;
+      height: 50px;
+      color: whitesmoke;
+      & > span {
+        margin-right: 5px;
+      }
+    }
+
+    &--center{
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width: 80px;
+      height: 80px;
+      border-radius: 10px;
+      background-color: black;
+      color: whitesmoke;
+    }
+
+    &--default{
+      display: none;
+    }
+
+    & > span {
+      font-size: 30px;
+    }
+  }
+}
